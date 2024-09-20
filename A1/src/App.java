@@ -1,21 +1,22 @@
 import java.util.Vector;
 
 public class App {
-    // public static void main(String[] args) throws Exception {
-    //     Vector<Object> Va = null;
-    //     Vector<Object> Vb = new Vector<Object>();
-    //     Vector<Object> merge = new Vector<Object>();
 
-    //     // Va.add("test1");
-    //     // Va.add(2);
-    //     Vb.add(null);
-    //     Vb.add(5);
+    public static Vector<Object> unionOld(Vector a, Vector b) {
+        Vector result = new Vector();
 
-    //     // System.out.println(Va.toString());
-    //     System.out.println(Vb.toString());
-    //     merge = union(Va, Vb);
-    //     System.out.println(merge.toString());
-    // }
+        // add elements from vector a
+        result.addAll(a);
+
+        // add element fromv ector b only if they are in a
+        for (Object element : b) {
+            if (!result.contains(element)) {
+                result.add(element);
+            }
+        }
+
+        return result;
+    }
 
     public static Vector<Object> union(Vector<Object> a, Vector<Object> b) {
         try {
