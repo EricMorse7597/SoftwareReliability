@@ -35,26 +35,25 @@ public class AppTest {
     }
     
     @Test
-    public void duplicateObjectTest() {
+    public void duplicateAndNullObjectTest() {
         Vector<Object> result = new Vector<Object>();
         Vector<Object> Vector1 = new Vector<Object>();
         Vector<Object> Vector2 = new Vector<Object>();
 
         result.add(1);
-        result.add(2);
         result.add(3);
         result.add(4);
         result.add(5);
 
         Vector1.add(1);
-        Vector1.add(2);
+        Vector1.add(null);
         Vector1.add(3);
 
         Vector2.add(3);
         Vector2.add(4);
         Vector2.add(5);
         
-        System.out.println("in appTest -- duplicateObjectTest()");
-        assertTrue("union is incorrect with duplicate", App.union(Vector1, Vector2).equals(result));
+        System.out.println("in appTest -- duplicateAndNullObjectTest()");
+        assertTrue("union is incorrect with duplicate and/or null", App.union(Vector1, Vector2).equals(result));
     }
 }
