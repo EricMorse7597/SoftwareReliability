@@ -100,6 +100,23 @@ public class DataDrivenUnionTest {
     Vector26.add(4);
     Vector26.add(5);
 
+    Vector<Object> result7 = new Vector<Object>();
+    Vector<Object> Vector17 = new Vector<Object>();
+    Vector<Object> Vector27 = new Vector<Object>();
+
+    result7.add(3);
+    result7.add(4);
+    result7.add(5);
+    result7.add(1);
+
+    Vector17.add(3);
+    Vector17.add(4);
+    Vector17.add(5);
+
+    Vector27.add(1);
+    Vector27.add(null);
+    Vector27.add(3);
+
 	return Arrays.asList (
         new Object [][] { 
             {Vector11, Vector21, result1}, 
@@ -107,7 +124,8 @@ public class DataDrivenUnionTest {
             {Vector13, Vector23, result3}, 
             {Vector14, Vector24, result4}, 
             {Vector15, Vector25, result5}, 
-            {null, Vector26, result6} 
+            {null, Vector26, result6},
+            {Vector17, Vector27, result7}
          }); 
   }
 

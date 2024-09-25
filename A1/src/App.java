@@ -2,7 +2,7 @@ import java.util.Vector;
 
 public class App {
 
-    public static Vector<Object> unionOld(Vector a, Vector b) {
+    public static Vector unionOld(Vector a, Vector b) {
         Vector result = new Vector();
 
         // add elements from vector a
