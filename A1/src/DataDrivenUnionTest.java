@@ -113,10 +113,21 @@ public class DataDrivenUnionTest {
 
     @Test
     public void unionTest() {
+        System.out.println("Union test");
         System.out.println("vector 1: " + vector1);
         System.out.println("vector 2: " + vector2);
         System.out.println("vector union result: " + result);
 
         assertTrue("Failed union test", App.union(vector1, vector2).equals(result));
+    }
+
+    @Test
+    public void unionOldTest() {
+        System.out.println("union old test");
+        System.out.println("vector 1: " + vector1);
+        System.out.println("vector 2: " + vector2);
+        System.out.println("vector union result: " + result);
+
+        assertTrue("Failed unionOld test", App.unionOld(vector1, vector2).equals(result));
     }
 }
