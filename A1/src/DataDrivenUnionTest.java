@@ -58,12 +58,57 @@ public class DataDrivenUnionTest {
     Vector22.add(3);
     Vector22.add(4);
     Vector22.add(5);
+
+    Vector<Object> result3 = new Vector<Object>();
+    Vector<Object> Vector13 = new Vector<Object>();
+    Vector<Object> Vector23 = new Vector<Object>();
+
+    result3.add(1);
+    result3.add(2);
+    result3.add(3);
+
+    Vector13.add(1);
+    Vector13.add(2);
+    Vector13.add(3);
+
+    Vector<Object> result4 = new Vector<Object>();
+    Vector<Object> Vector14 = new Vector<Object>();
+    Vector<Object> Vector24 = new Vector<Object>();
+
+    Vector<Object> result5 = new Vector<Object>();
+    Vector<Object> Vector15 = new Vector<Object>();
+    Vector<Object> Vector25 = new Vector<Object>();
+
+    result5.add(1);
+    result5.add("Bob");
+    result5.add('a');
+    result5.add(2);
+    result5.add("Mary");
+
+    Vector15.add(1);
+    Vector15.add("Bob");
+    Vector15.add('a');
+
+    Vector25.add(2);
+    Vector25.add('a');
+    Vector25.add("Mary");
+
+    Vector<Object> result6 = new Vector<Object>();
+    Vector<Object> Vector26 = new Vector<Object>();
     
+    Vector26.add(3);
+    Vector26.add(4);
+    Vector26.add(5);
 
 	return Arrays.asList (
         new Object [][] { 
-            {Vector11, Vector21, result1}, {Vector12, Vector22, result2},} 
-        ); 
+            {Vector11, Vector21, result1}, 
+            {Vector12, Vector22, result2}, 
+            {Vector13, Vector23, result3}, 
+            {Vector14, Vector24, result4}, 
+            {Vector15, Vector25, result5}, 
+            {null, Vector26, result6} 
+         }); 
   }
 
     @Test
