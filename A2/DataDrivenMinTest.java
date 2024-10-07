@@ -34,11 +34,25 @@ public class DataDrivenMinTest<T extends Comparable<T>> {
         list3.add(2);
         result3 = 1;
 
+        List<Integer> list4 = new ArrayList<>();
+        Integer result4;
+        list4.add(1);
+        list4.add(2);
+        result4 = 2;
+
+        List<Object> list5 = new ArrayList<>();
+        Object result5;
+        list5.add(1);
+        list5.add(2);
+        result5 = 1;
+
         return Arrays.asList(
                 new Object[][] {
-                        { list1, result1 },
-                        { list2, result2 },
-                        { list3, result3 }
+                        { list1, result1 }, // Tests for correct output
+                        { list2, result2 }, // Tests for correct output
+                        { list3, result3 }, // Tests for correct output
+                        { list4, result4 }, // Tests for incorrect output (error)
+                        { list5, result5 }
                 });
     }
 

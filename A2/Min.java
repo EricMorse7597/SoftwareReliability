@@ -4,7 +4,7 @@ public class Min {
     /**
      * Returns the minimum element in a list
      * 
-     * @param list Comparale list of element to search
+     * @param list Comparable list of element to search
      * @return the minimum element in the list
      * @throws NullPointerException     (NPE) if list is null or f any list elements
      *                                  are null
