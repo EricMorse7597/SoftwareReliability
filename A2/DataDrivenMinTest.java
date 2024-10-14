@@ -18,7 +18,8 @@ public class DataDrivenMinTest<T extends Comparable<T>> {
     @Parameters
     public static Collection<Object[]> minValues() {
         /**
-         * This test shows the method returns the right element when there's only one
+         * This test shows the method returns the right element when there's only one,
+         * it should pass
          */
         List<String> list1 = new ArrayList<>();
         String result1;
@@ -26,7 +27,7 @@ public class DataDrivenMinTest<T extends Comparable<T>> {
         result1 = "dog";
 
         /**
-         * This test shows the method returns the smallest string
+         * This test shows the method returns the smallest string, it should pass.
          */
         List<String> list2 = new ArrayList<>();
         String result2;
@@ -35,7 +36,8 @@ public class DataDrivenMinTest<T extends Comparable<T>> {
         result2 = "cat";
 
         /**
-         * This test shows the method returns the right int when there's only one
+         * This test shows the method returns the right int when there's only one, it
+         * should pass.
          */
         List<Integer> list3 = new ArrayList<>();
         Integer result3;
@@ -43,7 +45,8 @@ public class DataDrivenMinTest<T extends Comparable<T>> {
         result3 = 2;
 
         /**
-         * This test shows the method returns the right int when theres more then one
+         * This test shows the method returns the right int when theres more then one,
+         * it should pass.
          */
         List<Integer> list4 = new ArrayList<>();
         Integer result4;
@@ -52,7 +55,8 @@ public class DataDrivenMinTest<T extends Comparable<T>> {
         result4 = 1;
 
         /**
-         * This test shows the method returns the right int when it's not the first
+         * This test shows the method returns the right int when it's not the first, it
+         * should pass.
          * element
          */
         List<Integer> list5 = new ArrayList<>();
@@ -65,7 +69,8 @@ public class DataDrivenMinTest<T extends Comparable<T>> {
         result5 = 2;
 
         /**
-         * This test shows the method returns the right string even through
+         * This test shows the method returns the right string even through, it should
+         * pass.
          * capitilization
          */
         List<String> list6 = new ArrayList<>();
@@ -75,7 +80,8 @@ public class DataDrivenMinTest<T extends Comparable<T>> {
         result6 = "Dog";
 
         /**
-         * This test shows the method returns the right int even though it's negative
+         * This test shows the method returns the right int even though it's negative,
+         * it should pass.
          */
         List<Integer> list7 = new ArrayList<>();
         Integer result7;
@@ -86,7 +92,7 @@ public class DataDrivenMinTest<T extends Comparable<T>> {
 
         /**
          * This test shows the method returns the right string even though the 2nd could
-         * have been interpreted as a number
+         * have been interpreted as a number, it should pass.
          */
         List<String> list8 = new ArrayList<>();
         String result8;
@@ -96,7 +102,7 @@ public class DataDrivenMinTest<T extends Comparable<T>> {
 
         /**
          * This test shows the method doesn't always return true (the result is
-         * incorrect)
+         * incorrect), it should fail
          */
         List<String> list9 = new ArrayList<>();
         Integer result9;
@@ -105,7 +111,7 @@ public class DataDrivenMinTest<T extends Comparable<T>> {
         result9 = 2;
 
         /**
-         * This test shows the method returns NPEs
+         * This test shows the method returns NPEs, it should show an error
          */
         List<Integer> list10 = new ArrayList<>();
         Integer result10;
