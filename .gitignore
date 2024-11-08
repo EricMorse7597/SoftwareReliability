@@ -1,3 +1,7 @@
 bin/
 .idea
 .vscode
+CIS4150.iml
+A4/Q2/.coverage
+A4/Q2/__pycache__/calculator.cpython-311.pyc
+A4/Q2/__pycache__/test_calculator.cpython-311-pytest-8.3.3.pyc
