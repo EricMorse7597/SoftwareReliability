@@ -75,4 +75,25 @@ public class ThermostatTest<T extends Comparable<T>> {
         assertTrue(thermo.turnHeaterOn(settings));
     }
 
+    public void PCTest3() {
+        Thermostat thermo = new Thermostat();
+        ProgrammedSettings settings = new ProgrammedSettings();
+
+        settings.setSetting(Period.MORNING, DayType.WEEKDAY, 69);
+        thermo.setPeriod(Period.MORNING);
+        thermo.setDay(DayType.WEEKDAY);
+
+        thermo.setCurrentTemp(63);
+        thermo.setDay(DayType.WEEKDAY);
+
+        thermo.setOverride(false);
+
+        thermo.setOverTemp(70);
+
+        thermo.setMinLag(10);
+        thermo.setTimeSinceLastRun(12);
+
+        assertTrue(thermo.turnHeaterOn(settings));
+    }
+
 }
