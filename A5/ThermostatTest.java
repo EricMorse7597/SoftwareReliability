@@ -54,6 +54,7 @@ public class ThermostatTest<T extends Comparable<T>> {
         assertTrue(thermo.turnHeaterOn(settings));
     }
 
+    @Test
     public void PCTest2() {
         Thermostat thermo = new Thermostat();
         ProgrammedSettings settings = new ProgrammedSettings();
@@ -72,9 +73,10 @@ public class ThermostatTest<T extends Comparable<T>> {
         thermo.setMinLag(10);
         thermo.setTimeSinceLastRun(8);
 
-        assertTrue(thermo.turnHeaterOn(settings));
+        assertFalse(thermo.turnHeaterOn(settings));
     }
 
+    @Test
     public void PCTest3() {
         Thermostat thermo = new Thermostat();
         ProgrammedSettings settings = new ProgrammedSettings();
