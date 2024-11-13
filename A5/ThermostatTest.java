@@ -70,7 +70,7 @@ public class ThermostatTest<T extends Comparable<T>> {
         thermo.setOverTemp(70);
 
         thermo.setMinLag(10);
-        thermo.setTimeSinceLastRun(12);
+        thermo.setTimeSinceLastRun(8);
 
         assertTrue(thermo.turnHeaterOn(settings));
     }
