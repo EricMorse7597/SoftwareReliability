@@ -98,4 +98,180 @@ public class ThermostatTest<T extends Comparable<T>> {
         assertTrue(thermo.turnHeaterOn(settings));
     }
 
+    @Test
+    public void CACCTestA1() { // A is determinate, A is true
+        Thermostat thermo = new Thermostat();
+        ProgrammedSettings settings = new ProgrammedSettings();
+
+        settings.setSetting(Period.MORNING, DayType.WEEKDAY, 69);
+        thermo.setThresholdDiff(0);
+        thermo.setPeriod(Period.MORNING);
+        thermo.setDay(DayType.WEEKDAY);
+
+        thermo.setCurrentTemp(63);
+        thermo.setDay(DayType.WEEKDAY);
+
+        thermo.setOverride(false);
+        thermo.setOverTemp(70);
+
+        thermo.setMinLag(10);
+        thermo.setTimeSinceLastRun(12);
+
+        assertTrue(thermo.turnHeaterOn(settings));
+    }
+
+    @Test
+    public void CACCTestA2() { // A is determinate, A is false
+        Thermostat thermo = new Thermostat();
+        ProgrammedSettings settings = new ProgrammedSettings();
+
+        settings.setSetting(Period.MORNING, DayType.WEEKDAY, 69);
+        thermo.setThresholdDiff(0);
+        thermo.setPeriod(Period.MORNING);
+        thermo.setDay(DayType.WEEKDAY);
+
+        thermo.setCurrentTemp(90);
+        thermo.setDay(DayType.WEEKDAY);
+
+        thermo.setOverride(false);
+        thermo.setOverTemp(70);
+
+        thermo.setMinLag(10);
+        thermo.setTimeSinceLastRun(12);
+
+        assertFalse(thermo.turnHeaterOn(settings));
+    }
+
+    @Test
+    public void CACCTestB1() { // B is determinate, B is true
+        Thermostat thermo = new Thermostat();
+        ProgrammedSettings settings = new ProgrammedSettings();
+
+        settings.setSetting(Period.MORNING, DayType.WEEKDAY, 65);
+        thermo.setThresholdDiff(0);
+        thermo.setPeriod(Period.MORNING);
+        thermo.setDay(DayType.WEEKDAY);
+
+        thermo.setCurrentTemp(67);
+        thermo.setDay(DayType.WEEKDAY);
+
+        thermo.setOverride(true);
+        thermo.setOverTemp(70);
+
+        thermo.setMinLag(10);
+        thermo.setTimeSinceLastRun(12);
+
+        assertTrue(thermo.turnHeaterOn(settings));
+    }
+
+    @Test
+    public void CACCTestB2() { // B is determinate, B is false
+        Thermostat thermo = new Thermostat();
+        ProgrammedSettings settings = new ProgrammedSettings();
+
+        settings.setSetting(Period.MORNING, DayType.WEEKDAY, 65);
+        thermo.setThresholdDiff(0);
+        thermo.setPeriod(Period.MORNING);
+        thermo.setDay(DayType.WEEKDAY);
+
+        thermo.setCurrentTemp(67);
+        thermo.setDay(DayType.WEEKDAY);
+
+        thermo.setOverride(false);
+        thermo.setOverTemp(70);
+
+        thermo.setMinLag(10);
+        thermo.setTimeSinceLastRun(12);
+
+        assertFalse(thermo.turnHeaterOn(settings));
+    }
+
+    @Test
+    public void CACCTestC1() { // C is determinate, C is true
+        Thermostat thermo = new Thermostat();
+        ProgrammedSettings settings = new ProgrammedSettings();
+
+        settings.setSetting(Period.MORNING, DayType.WEEKDAY, 65);
+        thermo.setThresholdDiff(0);
+        thermo.setPeriod(Period.MORNING);
+        thermo.setDay(DayType.WEEKDAY);
+
+        thermo.setCurrentTemp(67);
+        thermo.setDay(DayType.WEEKDAY);
+
+        thermo.setOverride(true);
+        thermo.setOverTemp(70);
+
+        thermo.setMinLag(10);
+        thermo.setTimeSinceLastRun(12);
+
+        assertTrue(thermo.turnHeaterOn(settings));
+    }
+
+    @Test
+    public void CACCTestC2() { // C is determinate, C is false
+        Thermostat thermo = new Thermostat();
+        ProgrammedSettings settings = new ProgrammedSettings();
+
+        settings.setSetting(Period.MORNING, DayType.WEEKDAY, 65);
+        thermo.setThresholdDiff(0);
+        thermo.setPeriod(Period.MORNING);
+        thermo.setDay(DayType.WEEKDAY);
+
+        thermo.setCurrentTemp(67);
+        thermo.setDay(DayType.WEEKDAY);
+
+        thermo.setOverride(true);
+        thermo.setOverTemp(65);
+
+        thermo.setMinLag(10);
+        thermo.setTimeSinceLastRun(12);
+
+        assertFalse(thermo.turnHeaterOn(settings));
+    }
+
+    @Test
+    public void CACCTestD1() { // D is determinate, D is true
+        Thermostat thermo = new Thermostat();
+        ProgrammedSettings settings = new ProgrammedSettings();
+
+        settings.setSetting(Period.MORNING, DayType.WEEKDAY, 65);
+        thermo.setThresholdDiff(0);
+        thermo.setPeriod(Period.MORNING);
+        thermo.setDay(DayType.WEEKDAY);
+
+        thermo.setCurrentTemp(67);
+        thermo.setDay(DayType.WEEKDAY);
+
+        thermo.setOverride(true);
+        thermo.setOverTemp(70);
+
+        thermo.setMinLag(10);
+        thermo.setTimeSinceLastRun(12);
+
+        assertTrue(thermo.turnHeaterOn(settings));
+    }
+
+    @Test
+    public void CACCTestD2() { // D is determinate, D is false
+        Thermostat thermo = new Thermostat();
+        ProgrammedSettings settings = new ProgrammedSettings();
+
+        settings.setSetting(Period.MORNING, DayType.WEEKDAY, 65);
+        thermo.setThresholdDiff(0);
+        thermo.setPeriod(Period.MORNING);
+        thermo.setDay(DayType.WEEKDAY);
+
+        thermo.setCurrentTemp(67);
+        thermo.setDay(DayType.WEEKDAY);
+
+        thermo.setOverride(true);
+        thermo.setOverTemp(70);
+
+        thermo.setMinLag(14);
+        thermo.setTimeSinceLastRun(12);
+
+        assertFalse(thermo.turnHeaterOn(settings));
+    }
+
 }
