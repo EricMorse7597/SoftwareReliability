@@ -33,7 +33,7 @@ public class ThermostatTest<T extends Comparable<T>> {
     }
 
     @Test
-    public void PCTest1() {
+    public void PCTest1() { // testing for pred 1 and 2 true - a b c d: true
         Thermostat thermo = new Thermostat();
         ProgrammedSettings settings = new ProgrammedSettings();
 
@@ -52,10 +52,11 @@ public class ThermostatTest<T extends Comparable<T>> {
         thermo.setTimeSinceLastRun(12);
 
         assertTrue(thermo.turnHeaterOn(settings));
+        assertTrue(thermo.getRunTime() == 70 - 63);
     }
 
     @Test
-    public void PCTest2() {
+    public void PCTest2() { // testing for pred 1 false - a b c: true / d: false
         Thermostat thermo = new Thermostat();
         ProgrammedSettings settings = new ProgrammedSettings();
 
@@ -77,7 +78,7 @@ public class ThermostatTest<T extends Comparable<T>> {
     }
 
     @Test
-    public void PCTest3() {
+    public void PCTest3() { // testing for pred 2 false - a c d: true -- b: false
         Thermostat thermo = new Thermostat();
         ProgrammedSettings settings = new ProgrammedSettings();
 
@@ -94,12 +95,14 @@ public class ThermostatTest<T extends Comparable<T>> {
 
         thermo.setMinLag(10);
         thermo.setTimeSinceLastRun(12);
+        thermo.setThresholdDiff(0);
 
-        assertTrue(thermo.turnHeaterOn(settings));
+        thermo.turnHeaterOn(settings);
+        assertFalse(thermo.getRunTime() == Math.abs(70 - 63));
     }
 
     @Test
-    public void CACCTestA1() { // A is determinate, A is true
+    public void CACCTest1() { // a is determinate - a, c, d: true -- b: false
         Thermostat thermo = new Thermostat();
         ProgrammedSettings settings = new ProgrammedSettings();
 
@@ -121,7 +124,7 @@ public class ThermostatTest<T extends Comparable<T>> {
     }
 
     @Test
-    public void CACCTestA2() { // A is determinate, A is false
+    public void CACCTest2() { // a and c is determinate, - b, d: true -- a, c: false
         Thermostat thermo = new Thermostat();
         ProgrammedSettings settings = new ProgrammedSettings();
 
@@ -133,7 +136,7 @@ public class ThermostatTest<T extends Comparable<T>> {
         thermo.setCurrentTemp(90);
         thermo.setDay(DayType.WEEKDAY);
 
-        thermo.setOverride(false);
+        thermo.setOverride(true);
         thermo.setOverTemp(70);
 
         thermo.setMinLag(10);
@@ -143,7 +146,7 @@ public class ThermostatTest<T extends Comparable<T>> {
     }
 
     @Test
-    public void CACCTestB1() { // B is determinate, B is true
+    public void CACCTest3() { // B and C is determinate - b, c, d: true -- a: false
         Thermostat thermo = new Thermostat();
         ProgrammedSettings settings = new ProgrammedSettings();
 
@@ -165,7 +168,7 @@ public class ThermostatTest<T extends Comparable<T>> {
     }
 
     @Test
-    public void CACCTestB2() { // B is determinate, B is false
+    public void CACCTest4() { // B is determinate - c, d: true -- a, b: false
         Thermostat thermo = new Thermostat();
         ProgrammedSettings settings = new ProgrammedSettings();
 
@@ -187,7 +190,7 @@ public class ThermostatTest<T extends Comparable<T>> {
     }
 
     @Test
-    public void CACCTestC1() { // C is determinate, C is true
+    public void CACCTest5() { // D is determinate - a, b, c, d: true
         Thermostat thermo = new Thermostat();
         ProgrammedSettings settings = new ProgrammedSettings();
 
@@ -196,7 +199,7 @@ public class ThermostatTest<T extends Comparable<T>> {
         thermo.setPeriod(Period.MORNING);
         thermo.setDay(DayType.WEEKDAY);
 
-        thermo.setCurrentTemp(67);
+        thermo.setCurrentTemp(63);
         thermo.setDay(DayType.WEEKDAY);
 
         thermo.setOverride(true);
@@ -209,7 +212,7 @@ public class ThermostatTest<T extends Comparable<T>> {
     }
 
     @Test
-    public void CACCTestC2() { // C is determinate, C is false
+    public void CACCTest6() { // D is determinate - a, b, c: true -- d: false
         Thermostat thermo = new Thermostat();
         ProgrammedSettings settings = new ProgrammedSettings();
 
@@ -218,60 +221,15 @@ public class ThermostatTest<T extends Comparable<T>> {
         thermo.setPeriod(Period.MORNING);
         thermo.setDay(DayType.WEEKDAY);
 
-        thermo.setCurrentTemp(67);
+        thermo.setCurrentTemp(63);
         thermo.setDay(DayType.WEEKDAY);
 
         thermo.setOverride(true);
         thermo.setOverTemp(65);
 
         thermo.setMinLag(10);
-        thermo.setTimeSinceLastRun(12);
+        thermo.setTimeSinceLastRun(8);
 
         assertFalse(thermo.turnHeaterOn(settings));
     }
-
-    @Test
-    public void CACCTestD1() { // D is determinate, D is true
-        Thermostat thermo = new Thermostat();
-        ProgrammedSettings settings = new ProgrammedSettings();
-
-        settings.setSetting(Period.MORNING, DayType.WEEKDAY, 65);
-        thermo.setThresholdDiff(0);
-        thermo.setPeriod(Period.MORNING);
-        thermo.setDay(DayType.WEEKDAY);
-
-        thermo.setCurrentTemp(67);
-        thermo.setDay(DayType.WEEKDAY);
-
-        thermo.setOverride(true);
-        thermo.setOverTemp(70);
-
-        thermo.setMinLag(10);
-        thermo.setTimeSinceLastRun(12);
-
-        assertTrue(thermo.turnHeaterOn(settings));
-    }
-
-    @Test
-    public void CACCTestD2() { // D is determinate, D is false
-        Thermostat thermo = new Thermostat();
-        ProgrammedSettings settings = new ProgrammedSettings();
-
-        settings.setSetting(Period.MORNING, DayType.WEEKDAY, 65);
-        thermo.setThresholdDiff(0);
-        thermo.setPeriod(Period.MORNING);
-        thermo.setDay(DayType.WEEKDAY);
-
-        thermo.setCurrentTemp(67);
-        thermo.setDay(DayType.WEEKDAY);
-
-        thermo.setOverride(true);
-        thermo.setOverTemp(70);
-
-        thermo.setMinLag(14);
-        thermo.setTimeSinceLastRun(12);
-
-        assertFalse(thermo.turnHeaterOn(settings));
-    }
-
 }
