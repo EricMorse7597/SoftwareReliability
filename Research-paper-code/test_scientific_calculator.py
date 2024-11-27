@@ -222,47 +222,47 @@ def test_cos_large_angle():
 def test_cos_negative_large_angle():
     assert cos(-1080) == pytest.approx(1)
 
-# def test_tan_large_angle():
-#     assert tan(1080) == pytest.approx(0)
+def test_tan_large_angle():
+    assert tan(1080) == pytest.approx(0)
 
-# def test_tan_negative_large_angle():
-#     assert tan(-1080) == pytest.approx(0)
+def test_tan_negative_large_angle():
+    assert tan(-1080) == pytest.approx(0)
 
-# def test_arcsin_edge_case():
-#     assert arcsin(0) == 0
+def test_arcsin_edge_case():
+    assert arcsin(0) == 0
 
-# def test_arccos_edge_case():
-#     assert arccos(0) == pytest.approx(90)
+def test_arccos_edge_case():
+    assert arccos(0) == pytest.approx(90)
 
-# def test_arctan_large_positive():
-#     assert arctan(1e10) == pytest.approx(90)
+def test_arctan_large_positive():
+    assert arctan(1e10) == pytest.approx(90)
 
-# def test_arctan_large_negative():
-#     assert arctan(-1e10) == pytest.approx(-90)
+def test_arctan_large_negative():
+    assert arctan(-1e10) == pytest.approx(-90)
 
-# def test_sinh_negative():
-#     assert sinh(-5) == pytest.approx(-74.2032, rel=1e-4)
+def test_sinh_negative():
+    assert sinh(-5) == pytest.approx(-74.2032, rel=1e-4)
 
-# def test_cosh_negative():
-#     assert cosh(-5) == pytest.approx(74.2099, rel=1e-4)
+def test_cosh_negative():
+    assert cosh(-5) == pytest.approx(74.2099, rel=1e-4)
 
-# def test_tanh_large_positive():
-#     assert tanh(1e5) == pytest.approx(1)
+def test_tanh_large_positive():
+    assert tanh(1e5) == pytest.approx(1)
 
-# def test_tanh_large_negative():
-#     assert tanh(-1e5) == pytest.approx(-1)
+def test_tanh_large_negative():
+    assert tanh(-1e5) == pytest.approx(-1)
 
-# def test_log_base_ten():
-#     assert log(100, 10) == 2
+def test_log_base_ten():
+    assert log(100, 10) == 2
 
-# def test_log_large_number():
-#     assert log(1e50, 10) == pytest.approx(50)
+def test_log_large_number():
+    assert log(1e50, 10) == pytest.approx(50)
 
-# def test_log_small_fraction():
-#     assert log(1e-5, 10) == pytest.approx(-5)
+def test_log_small_fraction():
+    assert log(1e-5, 10) == pytest.approx(-5)
 
-# def test_ln_large_number():
-#     assert ln(1e50) == pytest.approx(115.129, rel=1e-3)
+def test_ln_large_number():
+    assert ln(1e50) == pytest.approx(115.129, rel=1e-3)
 
 # def test_ln_small_fraction():
 #     assert ln(1e-50) == pytest.approx(-115.129, rel=1e-3)
