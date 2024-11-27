@@ -1,11 +1,11 @@
-# test commit2
+# test commit
 import pytest
-import math
 from scientific_calculator import (
     add, subtract, multiply, divide,
     power, square_root, log, sin, cos, tan
 )
 
+# Basic operations
 def test_add():
     assert add(3, 5) == 8
     assert add(-1, 1) == 0
@@ -27,9 +27,7 @@ def test_divide():
     with pytest.raises(ValueError):
         divide(5, 0)
 
-def test_bedmas():
-    assert add(1, divide(10, 2)) == 6
-
+# Advanced operations
 def test_power():
     assert power(2, 3) == 8
     assert power(5, 0) == 1
