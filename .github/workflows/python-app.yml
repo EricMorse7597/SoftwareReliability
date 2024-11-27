@@ -41,4 +41,4 @@ jobs:
       - name: install pytest
         run: pip install pytest-cov
       - name: Test with pytest
-        run: pytest 'Research-paper-code/' --cov
+        run: pytest --cov
