@@ -1,6 +1,6 @@
 import math
 
-# Basic operations
+# basic operations from assignment
 def add(a, b):
     return a + b
 
@@ -15,7 +15,7 @@ def divide(a, b):
         raise ValueError("Cannot divide by zero")
     return a / b
 
-# Advanced operations
+# extended operations for scientific calculator for research paper
 def power(base, exp):
     return base ** exp
 
