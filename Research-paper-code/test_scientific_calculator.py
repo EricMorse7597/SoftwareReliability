@@ -264,36 +264,36 @@ def test_log_small_fraction():
 def test_ln_large_number():
     assert ln(1e50) == pytest.approx(115.129, rel=1e-3)
 
-# def test_ln_small_fraction():
-#     assert ln(1e-50) == pytest.approx(-115.129, rel=1e-3)
+def test_ln_small_fraction():
+    assert ln(1e-50) == pytest.approx(-115.129, rel=1e-3)
 
-# def test_absolute_value_large_negative():
-#     assert absolute_value(-1e20) == 1e20
+def test_absolute_value_large_negative():
+    assert absolute_value(-1e20) == 1e20
 
-# def test_absolute_value_small_negative():
-#     assert absolute_value(-1e-20) == pytest.approx(1e-20)
+def test_absolute_value_small_negative():
+    assert absolute_value(-1e-20) == pytest.approx(1e-20)
 
-# def test_radians_edge_case():
-#     assert radians(0) == 0
+def test_radians_edge_case():
+    assert radians(0) == 0
 
-# def test_degrees_edge_case():
-#     assert degrees(0) == 0
+def test_degrees_edge_case():
+    assert degrees(0) == 0
 
-# def test_hypotenuse_large_values():
-#     assert hypotenuse(1e10, 1e10) == pytest.approx(math.sqrt(2) * 1e10)
+def test_hypotenuse_large_values():
+    assert hypotenuse(1e10, 1e10) == pytest.approx(math.sqrt(2) * 1e10)
 
-# def test_hypotenuse_small_values():
-#     assert hypotenuse(1e-10, 1e-10) == pytest.approx(math.sqrt(2) * 1e-10)
+def test_hypotenuse_small_values():
+    assert hypotenuse(1e-10, 1e-10) == pytest.approx(math.sqrt(2) * 1e-10)
 
-# def test_log_huge_input():
-#     assert log(1e100, 10) == pytest.approx(100)
+def test_log_huge_input():
+    assert log(1e100, 10) == pytest.approx(100)
 
-# def test_factorial_stress():
-#     with pytest.raises(OverflowError):
-#         factorial(100000000000)
+def test_factorial_stress():
+    with pytest.raises(OverflowError):
+        factorial(100000000000)
 
-# def test_sinh_stress_large():
-#     assert sinh(1e2) == pytest.approx(math.sinh(100), rel=1e-4)
+def test_sinh_stress_large():
+    assert sinh(1e2) == pytest.approx(math.sinh(100), rel=1e-4)
 
 # def test_cosh_stress_large():
 #     assert cosh(1e2) == pytest.approx(math.cosh(100), rel=1e-4)
