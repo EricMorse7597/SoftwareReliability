@@ -5,3 +5,6 @@ CIS4150.iml
 A4/Q2/.coverage
 A4/Q2/__pycache__/calculator.cpython-311.pyc
 A4/Q2/__pycache__/test_calculator.cpython-311-pytest-8.3.3.pyc
+.coverage
+Research-paper-code/__pycache__/scientific_calculator.cpython-311.pyc
+Research-paper-code/__pycache__/test_scientific_calculator.cpython-311-pytest-8.3.3.pyc
