@@ -287,13 +287,3 @@ def test_hypotenuse_small_values():
 
 def test_log_huge_input():
     assert log(1e100, 10) == pytest.approx(100)
-
-# def test_factorial_stress():
-#     with pytest.raises(OverflowError):
-#         factorial(100000000000)
-
-# def test_sinh_stress_large():
-#     assert sinh(1e2) == pytest.approx(math.sinh(100), rel=1e-4)
-
-# def test_cosh_stress_large():
-#     assert cosh(1e2) == pytest.approx(math.cosh(100), rel=1e-4)
