@@ -6,7 +6,7 @@ name: Python application
 on:
   push:
     paths:
-      - 'Research Paper Code/**'
+      - 'Research-paper-code/**'
 
 permissions:
   contents: read
