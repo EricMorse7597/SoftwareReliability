@@ -14,11 +14,8 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY Research-paper-code /app/Research-paper-code
 COPY requirements.txt /app/
 
-# # Ensure pytest and coverage are installed (if not already in requirements.txt)
-# RUN pip install pytest pytest-cov
-
 # Set the working directory to Research-paper-code
 WORKDIR /app/Research-paper-code
 
-# Run pytest on Research-paper-code directory with coverage
+# Run pytest --cov on Research-paper-code directory with coverage
 CMD ["pytest", ".", "--cov"]
