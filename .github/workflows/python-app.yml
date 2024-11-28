@@ -5,9 +5,8 @@ name: Python application
 
 on:
   push:
-    paths:
-      - 'Research-paper-code/**'
-      - '**.yml'
+    branches:
+      - main
 
 permissions:
   contents: read
