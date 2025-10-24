@@ -1,5 +1,5 @@
 
-# SoftwareReliability
+# CIS*4150 SoftwareReliability
 
 A collection of assignments, utilities, and a research paper related to software reliability, testing, and small example projects (Java and Python). This repository collects course assignments (A1–A5), supporting libraries, a research paper (LaTeX source + PDF), and research code used for evaluation.
 
